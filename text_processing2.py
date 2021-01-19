@@ -77,6 +77,10 @@ def to_camel_case(underscore_str):
     tmp = underscore_str.split('_')
     for _ in range(tmp.count('')):
         tmp.remove('')
+    
+    # 길이가 1이면 그냥 return
+    if len(tmp) == 1:
+        return tmp[0]
 
     for i in range(len(tmp)):
         if i == 0:
